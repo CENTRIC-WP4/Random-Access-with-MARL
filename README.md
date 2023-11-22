@@ -14,12 +14,14 @@ The following command may be used to run a random policy provided.
 
 ## About the environment
 
-    N users and and K orthogonal resources (channels)
-    Each user may or may not have a packet in its buffer
-    Every user receives feedback from environment at each time slot (discrete time)
-    Binary feedback --> {collision, no-collision} or {success, no-success} --> can be switched
-    Ternary feedback --> {collision, idle, success}
-    Broadcast feedback - M bits after each time slot for each channel
+The environment has,
+
+N users and and K orthogonal resources (channels)
+Each user may or may not have a packet in its buffer
+Every user receives feedback from environment at each time slot (discrete time)
+Binary feedback --> {collision, no-collision} or {success, no-success} --> can be switched
+Ternary feedback --> {collision, idle, success}
+Broadcast feedback - M bits after each time slot for each channel
     
 The following are calculated per agent...
     
