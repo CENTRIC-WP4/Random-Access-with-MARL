@@ -2,7 +2,11 @@
 
 Author: **Muhammad Awais Jadoon**; Organization: **Interdigital Europe**
 
-The repository contains RL-gym environment for random access in wireless networks. The repository may be used to design random access techniques that are traffic-aware and service-aware. 
+The repository contains RL-gym environment for random access in wireless networks. 
+
+For more about rl-gym and rl-gym environments please check (https://github.com/openai/gym)
+
+The repository may be used to design random access techniques that are traffic-aware and service-aware. 
 
 Different reward functions are provided to test the performance using different traffic arrival models at the UEs. 
 
@@ -51,7 +55,9 @@ The objective might be to increase the throughput, or/and to have fairness among
 
 - *Throughput reward*:
     - success or no-success --> {0,1} | Can be defined differently (binary, ternary with success, idle and collision as feedback)
-    
+- *Reducing collisions*
+    - This function penalizes (negative value) agents when they collide, 0 when they are idle and positive when they are successful
+
 Agents are *cooperative* and therefore they all share the same reward; agents can also be *competitive*, having different rewards per agent. 
     
 Agents are homogeneous, i.e., they all have the same state, action spaces and rewards
