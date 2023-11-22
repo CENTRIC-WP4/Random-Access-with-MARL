@@ -52,6 +52,8 @@ The objective might be to increase the throughput, or/and to have fairness among
 - *Throughput reward*:
     - success or no-success --> {0,1} | Can be defined differently (binary, ternary with success, idle and collision as feedback)
     
-    - agents are cooperative and therefore they all share the same reward; agents can also be competitive with different rewards per agent. 
+Agents are *cooperative* and therefore they all share the same reward; agents can also be *competitive*, having different rewards per agent. 
     
-    - Agents are homogeneous, i.e., they all have the same state, action spaces and rewards
+Agents are homogeneous, i.e., they all have the same state, action spaces and rewards
+
+**Note:** `actions_n` is provided as  as an argument to the step function `step(actions_n)` that follows the RL-gym syntex. However, apart from containing actions of each agent and also other information such as buffer_state. This is a bit different from other RL-gym so be careful when using.
