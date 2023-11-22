@@ -16,36 +16,43 @@ The following command may be used to run a random policy provided.
 
 The environment has,
 
-N users and and K orthogonal resources (channels)
-Each user may or may not have a packet in its buffer
-Every user receives feedback from environment at each time slot (discrete time)
-Binary feedback --> {collision, no-collision} or {success, no-success} --> can be switched
-Ternary feedback --> {collision, idle, success}
-Broadcast feedback - M bits after each time slot for each channel
+- N users and and K orthogonal resources (channels)
+
+- Each user may or may not have a packet in its buffer
+
+- Every user receives feedback from environment at each time slot (discrete time)
+
+- Binary feedback --> {collision, no-collision} or {success, no-success} --> can be switched
+
+- Ternary feedback --> {collision, idle, success}
+
+- Broadcast feedback - M bits after each time slot for each channel
     
 The following are calculated per agent...
     
-    **Observation**:
-        the observation space for each agents includes: 
-         - IDs of agents if not False - otherwise IDs are not used
-         - Previous action - one-hot encoded for num_channels > 1
-         - Binary Indicator whether user belongs to event-traffic {1} or regular {0}
-         - feedback (for m channels) {1,0} for each channel - broadbast
-         - G_n(k) whether user n's transmission was success
-    **Actions space**:
-        not transmit or transmit over the mth channel --> {0, 1, ..., M}
-        0 means silent
-        The action space is number of reseources + 1, sometimes I may write action_space[0].n, 
-        which is basically the same thing. 0 index is just 1st agent but since all are the same, 
-        so it doesn't really matter
+**Observation**:
+the observation space for each agents includes: 
+    - IDs of agents if not False - otherwise IDs are not used
+    - Previous action - one-hot encoded for num_channels > 1
+    - Binary Indicator whether user belongs to event-traffic {1} or regular {0}
+    - feedback (for m channels) {1,0} for each channel - broadbast
+    - G_n(k) whether user n's transmission was success
+**Actions space**:
+    
+    transmit or not transmit over the mth channel --> {0, 1, ..., M}
+    
+    0 means silent
+    
+    The action space is number of reseources + 1, sometimes I may write action_space[0].n, 
+    which is basically the same thing. 0 index is just 1st agent but since all are the same, 
+    so it doesn't really matter in this case
         
-    **Reward**:
+**Reward**:
 
-        Several rewards may be used depending on the requirements of the task or objective;
-        The objective might be to increase the throughput, or/and to have fairness among user or decreasing packet delay
+    Several rewards may be used depending on the requirements of the task or objective; 
+    The objective might be to increase the throughput, or/and to have fairness among user or decreasing packet delay
 
-        **Throughput reward**:
-
+    **Throughput reward**:
         success or no-success --> {0,1} | Can be defined differently (binary, ternary with success, idle and collision as feedback)
         agents are cooperative and therefore they all share the same reward
     
