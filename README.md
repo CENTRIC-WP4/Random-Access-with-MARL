@@ -41,6 +41,7 @@ the observation space for each agents includes:
     - Binary Indicator whether user belongs to event-traffic {1} or regular {0}
     - feedback (for m channels) {1,0} for each channel - broadbast
     - G_n(k) whether user n's transmission was success
+
 **Actions space**:
 - Two actions per agent {transmit or not transmit} over the mth channel --> {0, 1, ..., M}
     
@@ -53,7 +54,7 @@ the observation space for each agents includes:
 Several rewards may be used depending on the requirements of the task or objective; 
 The objective might be to increase the throughput, or/and to have fairness among user or decreasing packet delay
 
-- *Throughput reward*:
+- *Throughput*:
     - success or no-success --> {0,1} | Can be defined differently (binary, ternary with success, idle and collision as feedback)
 - *Reducing collisions*
     - This function penalizes (negative value) agents when they collide, 0 when they are idle and positive when they are successful
