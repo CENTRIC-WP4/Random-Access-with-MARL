@@ -38,22 +38,20 @@ the observation space for each agents includes:
     - feedback (for m channels) {1,0} for each channel - broadbast
     - G_n(k) whether user n's transmission was success
 **Actions space**:
+- Two actions per agent {transmit or not transmit} over the mth channel --> {0, 1, ..., M}
     
-    transmit or not transmit over the mth channel --> {0, 1, ..., M}
+0 means silent
     
-    0 means silent
-    
-    The action space is number of reseources + 1, sometimes I may write action_space[0].n, 
-    which is basically the same thing. 0 index is just 1st agent but since all are the same, 
-    so it doesn't really matter in this case
+- The action space is number of reseources + 1, sometimes I may write action_space[0].n, which is basically the same thing. 0 index is just 1st agent but since all are the same, so it doesn't really matter in this case
         
 **Reward**:
 
-    Several rewards may be used depending on the requirements of the task or objective; 
-    The objective might be to increase the throughput, or/and to have fairness among user or decreasing packet delay
+Several rewards may be used depending on the requirements of the task or objective; 
+The objective might be to increase the throughput, or/and to have fairness among user or decreasing packet delay
 
-    **Throughput reward**:
-        success or no-success --> {0,1} | Can be defined differently (binary, ternary with success, idle and collision as feedback)
-        agents are cooperative and therefore they all share the same reward
+- *Throughput reward*:
+    - success or no-success --> {0,1} | Can be defined differently (binary, ternary with success, idle and collision as feedback)
     
-    Agents are homogeneous, i.e., they all have the same state, action spaces and rewards
+    - agents are cooperative and therefore they all share the same reward; agents can also be competitive with different rewards per agent. 
+    
+    - Agents are homogeneous, i.e., they all have the same state, action spaces and rewards
