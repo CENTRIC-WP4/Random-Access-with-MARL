@@ -1,7 +1,7 @@
 # Random-Access-with-MARL
 
 Author: **Muhammad Awais Jadoon**; Organization: **Interdigital Europe**
-
+## Overview
 The repository contains RL-gym environment for random access in wireless networks. 
 
 For more about rl-gym and rl-gym environments please check (https://github.com/openai/gym)
@@ -12,11 +12,8 @@ Different reward functions are provided to test the performance using different 
 
 Unlike regular traffic arrival in slotted ALOHA theroatical analysis, one may use custom traffic arrival models to learn RA techniques. We will* also provide traffic models that can be used.  
 
-The following command may be used to run a random policy provided. 
 
-`python main.py`
-
-## About the environment
+### About the environment
 
 The environment has,
 
@@ -64,3 +61,26 @@ Agents are *cooperative* and therefore they all share the same reward; agents ca
 Agents are homogeneous, i.e., they all have the same state, action spaces and rewards
 
 **Note:** `actions_n` is provided as  as an argument to the step function `step(actions_n)` that follows the RL-gym syntex. However, apart from containing actions of each agent and also other information such as buffer_state. This is a bit different from other RL-gym so be careful when using.
+
+## Getting Started
+The code has been tested to work on Python 3.7 
+
+1. Get the code:
+    ```
+    git clone https://github.com/CENTRIC-WP4/Random-Access-with-MARL.git
+    ```
+2. The following command may be used to run a random policy provided. 
+    ```
+   python main.py
+    ```
+## How to Contribute
+This repository may be used to extend the environment of random access using MARL. For instance,
+1. to designing robust and scalable techniques (with or without MARL) - it would be interesting to see if we can model this problem to be solved with Transformers and design a robust policy
+2. to incorporate custom traffic models for performance evaluation and learning policies for random access
+3. compare different MARL algorithms for centralized and decentralized training and decentralized execution
+4. to propose new reward functions as per the system requirements or to propose new ways to calculate the reward for fairness
+5. to customize the envrionment, e.g., state-space, action-space etc
+
+## References
+1. [Open AI Gym Documentation](http://gym.openai.com/docs/)
+2. [How to create new environments for Gym](https://github.com/openai/gym/blob/master/docs/creating-environments.md)
