@@ -16,6 +16,8 @@ The code has been tested to work on Python 3.7
 3. The following command may be used to run a random policy provided. 
     ```
     cd Random-Access-with-MARL
+    ```
+    ```
    python main.py
     ```
 ## Usage
@@ -57,14 +59,19 @@ Agents are homogeneous, i.e., they all have the same state, action spaces and re
 
 **Note:** `actions_n` is provided as  as an argument to the step function `step(actions_n)` that follows the RL-gym syntex. However, apart from containing actions of each agent and also other information such as buffer_state. This is a bit different from other RL-gym so be careful when using.
 
+## Baselines
+The designed schemes may be compared with backoff schemes such as exponential backoff in terms of throughput and fairness.
+
 ## How to Contribute
 This repository may be used to extend the environment of random access using MARL. For instance,
 1. to designing robust and scalable techniques (with or without MARL) - it would be interesting to see if we can model this problem to be solved with Transformers and design a robust policy
 2. to incorporate custom traffic models for performance evaluation and learning policies for random access
 3. compare different MARL algorithms for centralized and decentralized training and decentralized execution
 4. to propose new reward functions as per the system requirements or to propose new ways to calculate the reward for fairness
-5. to customize the envrionment, e.g., state-space, action-space etc
+5. to learn back-off factor in back-off schemes for random access
 
 ## References
 1. [Open AI Gym Documentation](http://gym.openai.com/docs/)
 2. [How to create new environments for Gym](https://github.com/openai/gym/blob/master/docs/creating-environments.md)
+3. [Learning Random Access Schemes for Massive Machine-Type Communication with MARL
+](https://arxiv.org/abs/2302.07837)
