@@ -22,9 +22,9 @@ The code has been tested to work on Python 3.7
     ```
 ## Usage
 
-`env.py` contains the rl-gym environment for random access
-`main.py` should be used to execute the code and it contains random policy
-`utils.py` contains methods to support the usage of the environment for batch states and rewards etc to be used with MARL
+1. `env.py` contains the rl-gym environment for random access
+2. `main.py` should be used to execute the code and it contains random policy
+3. `utils.py` contains methods to support the usage of the environment for batch states and rewards etc to be used with MARL
 ### About the environment
 
 The environment has,
@@ -67,7 +67,7 @@ The designed schemes may be compared with backoff schemes such as exponential ba
 
 ## How to Contribute
 This repository may be used to extend the environment of random access using MARL. For instance,
-1. to designing robust and scalable techniques (with or without MARL) - it would be interesting to see if we can model this problem to be solved with Transformers and design a robust policy
+1. to design a robust and scalable techniques (with or without MARL) - it would be interesting to see if we can model this problem to be solved with Transformers and design a robust policy
 2. to incorporate custom traffic models for performance evaluation and learning policies for random access
 3. compare different MARL algorithms for centralized and decentralized training and decentralized execution
 4. to propose new reward functions as per the system requirements or to propose new ways to calculate the reward for fairness
@@ -78,3 +78,6 @@ This repository may be used to extend the environment of random access using MAR
 2. [How to create new environments for Gym](https://github.com/openai/gym/blob/master/docs/creating-environments.md)
 3. [Learning Random Access Schemes for Massive Machine-Type Communication with MARL
 ](https://arxiv.org/abs/2302.07837)
+
+## License
+This project is licensed under Creative Commons Attribution 4.0 International Public License
