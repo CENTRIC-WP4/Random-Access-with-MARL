@@ -22,6 +22,9 @@ The code has been tested to work on Python 3.7
     ```
 ## Usage
 
+`env.py` contains the rl-gym environment for random access
+`main.py` should be used to execute the code and it contains random policy
+`utils.py` contains methods to support the usage of the environment for batch states and rewards etc to be used with MARL
 ### About the environment
 
 The environment has,
