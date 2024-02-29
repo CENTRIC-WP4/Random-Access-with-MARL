@@ -12,24 +12,26 @@ from locations import Locations
 from utils import Utils
 from env import RA_Env
 import matplotlib.pyplot as plt
+import json
+
+def load_config(config_file):
+    with open(config_file, 'r') as f:
+        config = json.load(f)
+    return config
 
 if __name__ == '__main__':
-    
-    # definitions 
-    num_users = 8
-    num_events = 1
-    num_channels = 2
-    d_th = 0.15 
+    # Load configuration from file
+    config = load_config('config.json')
 
-    # activation probability of events 
-    lmb_events = 0.00001
-    # arrival rate for users - regular traffic
-    lmb_users = 0.3#/num_users
-    
-    max_time_slots = 20
-
-    # type of feedback to be used --- check environment for other types
-    fb_type='success_broadcast'
+    # Extract configuration variables
+    num_users = config['num_users']
+    num_events = config['num_events']
+    num_channels = config['num_channels']
+    d_th = config['d_th']
+    lmb_events = config['lmb_events']
+    lmb_users = config['lmb_users']
+    max_time_slots = config['max_time_slots']
+    fb_type = config['fb_type']
     
     if num_users < 2:
         raise NotImplementedError("Choose number of users > 1")
