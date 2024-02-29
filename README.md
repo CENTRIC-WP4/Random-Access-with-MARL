@@ -25,6 +25,7 @@ The code has been tested to work on Python 3.7
 1. `env.py` contains the rl-gym environment for random access
 2. `main.py` should be used to execute the code and it contains random policy
 3. `utils.py` contains methods to support the usage of the environment for batch states and rewards etc to be used with MARL
+4. `config.json` may be used to change the parameters and to add further parameters
 ### About the environment
 
 The environment has,
